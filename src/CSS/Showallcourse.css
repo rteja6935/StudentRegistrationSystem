@@ -1,0 +1,93 @@
+.registration-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.filter-dropdown {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-dropdown label {
+  font-weight: 500;
+}
+
+.filter-dropdown select {
+  padding: 8px;
+  border-radius: 6px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.registration-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.registration-table th,
+.registration-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: white;
+}
+
+.status-badge.registered {
+  background-color: green;
+}
+
+.status-badge.not-registered {
+  background-color: orange;
+}
+
+.action-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.action-btn.disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 768px) {
+  .registration-table,
+  .registration-table thead,
+  .registration-table tbody,
+  .registration-table th,
+  .registration-table td,
+  .registration-table tr {
+    display: block;
+  }
+
+  .registration-table tr {
+    margin-bottom: 15px;
+  }
+
+  .registration-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .registration-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}

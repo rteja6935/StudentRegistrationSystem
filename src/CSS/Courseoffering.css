@@ -1,0 +1,52 @@
+/* CourseOffering.css */
+.offering-container {
+  padding: 1rem;
+}
+
+select, input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.offering-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.offering-table th,
+.offering-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.offering-form-section {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .offering-table, .offering-table thead, .offering-table tbody, .offering-table tr, .offering-table td {
+    display: block;
+  }
+
+  .offering-table thead {
+    display: none;
+  }
+
+  .offering-table tr {
+    background: #f3f3f3;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+
+  .offering-table td {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    padding: 6px 0;
+  }
+}

@@ -1,0 +1,190 @@
+:root {
+  --primary-color: #007BFF;
+  --primary-dark: #0056b3;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --inactive-color: #6c757d;
+  --background-light: #f8f9fa;
+  --border-radius: 6px;
+  --transition: 0.3s ease;
+}
+
+.add-course-container {
+  padding: 2rem;
+  background-color: var(--background-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.course-form-section,
+.course-list-section {
+  margin-bottom: 2.5rem;
+}
+
+h2, h3 {
+  color: var(--primary-dark);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border var(--transition);
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.error-input {
+  border-color: var(--danger-color);
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.form-actions {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition), transform 0.1s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.cancel-btn {
+  background-color: var(--inactive-color);
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+.edit-btn {
+  background-color: var(--warning-color);
+  color: black;
+  margin-right: 0.5rem;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.toggle-btn {
+  background-color: var(--success-color);
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.toggle-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.course-table th,
+.course-table td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+}
+
+.status-badge.active {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.status-badge.inactive {
+  background-color: var(--inactive-color);
+  color: white;
+}
+
+.inactive {
+  opacity: 0.7;
+}
+
+.no-courses {
+  font-style: italic;
+  color: #666;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .course-table,
+  .course-table thead,
+  .course-table tbody,
+  .course-table th,
+  .course-table td,
+  .course-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .course-table tbody tr {
+    margin-bottom: 1rem;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+
+  .course-table td {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    margin-bottom: 5px;
+  }
+
+  .course-table th {
+    display: none;
+  }
+}
