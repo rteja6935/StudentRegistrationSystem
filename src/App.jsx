@@ -9,7 +9,7 @@ import RegisteredStudents from './components/RegisteredStudents';
 import ShowAllCourse from './components/ShowAllCourse';
 import StudentCourseRegistration from './components/StudentCourseRegistration';
 import Adminlogin from './components/Adminlogin';
-import StudentLogin from './components/Studentlogin';
+import StudentLogin from './components/StudentLogin';
 
 function App() {
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
