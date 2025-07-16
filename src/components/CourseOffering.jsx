@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/CourseOffering.css';
+import '../CSS/Courseoffering.css';
 function CourseOffering() {
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedType, setSelectedType] = useState('');
