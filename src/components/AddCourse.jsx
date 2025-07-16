@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/AddCourse.css';
+import '../CSS/AddCourse.css'; 
 function AddCourse() {
   const [courseName, setCourseName] = useState('');
   const [error, setError] = useState('');
