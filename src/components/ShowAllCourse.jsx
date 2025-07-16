@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import '../CSS/ShowAllCourse.css'; // Assuming you have a CSS file for styling
+import '../CSS/ShowAllCourse.css'; 
 function ShowAllCourse() {
   const [offerings, setOfferings] = useState([]);
   const [registeredIds, setRegisteredIds] = useState([]);
