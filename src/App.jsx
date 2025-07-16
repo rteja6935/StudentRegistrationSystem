@@ -49,8 +49,6 @@ function App() {
 
   return (
     <div className="App">
-     <h1 className="main-heading">Student Registration System</h1>
-
       {/* Admin Navbar */}
       {isAdminLoggedIn && (
         <nav className="admin-navbar">
@@ -66,52 +64,62 @@ function App() {
 
       {/* Student Navbar */}
       {isStudentLoggedIn && !isAdminLoggedIn && (
-        <div className="student-navbar">
-          <button className="logout-btn" onClick={handleStudentLogout}>Logout</button>
-        </div>
+        <nav className="student-navbar">
+          <ul>
+            <li><button className="logout-btn" onClick={handleStudentLogout}>Logout</button></li>
+          </ul>
+        </nav>
       )}
 
-      <Routes>
-        {/* Default Home Route: Login Screen */}
-        {!isAdminLoggedIn && !isStudentLoggedIn && (
-          <Route
-            path="/"
-            element={
-              <div className="login-screen">
-                <div className="login-form-container">
-                  <h2>Admin Login</h2>
-                  <Adminlogin onAdminLogin={handleAdminLogin} />
+      {/* Show Heading Only on Login */}
+      {!isAdminLoggedIn && !isStudentLoggedIn && (
+        <h1 className="main-heading">Student Registration System</h1>
+      )}
+
+      {/* Main Content */}
+      <div className="main-content">
+        <Routes>
+          {/* Default Home Route: Login Screen */}
+          {!isAdminLoggedIn && !isStudentLoggedIn && (
+            <Route
+              path="/"
+              element={
+                <div className="login-screen">
+                  <div className="login-form-container">
+                    <h2>Admin Login</h2>
+                    <Adminlogin onAdminLogin={handleAdminLogin} />
+                  </div>
+                  <div className="login-form-container">
+                    <h2>Student Login</h2>
+                    <StudentLogin onStudentLogin={handleStudentLogin} />
+                  </div>
                 </div>
-                <div className="login-form-container">
-                  <h2>Student Login</h2>
-                  <StudentLogin onStudentLogin={handleStudentLogin} />
-                </div>
-              </div>
-            }
-          />
-        )}
+              }
+            />
+          )}
 
-        {/* Admin Routes */}
-        {isAdminLoggedIn && (
-          <>
-            <Route path="/add-course" element={<AddCourse />} />
-            <Route path="/add-course-types" element={<AddCourseTypes />} />
-            <Route path="/course-offering" element={<CourseOffering />} />
-            <Route path="/registered-students" element={<RegisteredStudents />} />
-          </>
-        )}
+          {/* Admin Routes */}
+          {isAdminLoggedIn && (
+            <>
+              <Route path="/add-course" element={<AddCourse />} />
+              <Route path="/add-course-types" element={<AddCourseTypes />} />
+              <Route path="/course-offering" element={<CourseOffering />} />
+              <Route path="/registered-students" element={<RegisteredStudents />} />
+            </>
+          )}
 
-        {/* Student Routes */}
-        {isStudentLoggedIn && (
-          <>
-            <Route path="/show-all-courses" element={<ShowAllCourse />} />
-            <Route path="/student-course-registration" element={<StudentCourseRegistration />} />
-          </>
-        )}
+          {/* Student Routes */}
+          {isStudentLoggedIn && (
+            <>
+              <Route path="/show-all-courses" element={<ShowAllCourse />} />
+              <Route path="/student-course-registration" element={<StudentCourseRegistration />} />
+            </>
+          )}
 
-        {/* Fallback Route */}
-        <Route path="*" element={<div>Unauthorized or Invalid Route</div>} />
-      </Routes>
+          {/* Fallback Route */}
+          <Route path="*" element={<div>Unauthorized or Invalid Route</div>} />
+        </Routes>
+      </div>
     </div>
   );
 }
