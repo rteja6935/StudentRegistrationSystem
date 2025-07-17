@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import '../CSS/RegisteredStudents.css';
 function RegisteredStudents() {
   const [registrations, setRegistrations] = useState([]);
 
@@ -14,7 +14,7 @@ function RegisteredStudents() {
   }, []);
 
   return (
-    <div>
+    <div className="registered-container">
       <h2>Student Registered Details</h2>
       {registrations.length === 0 ? (
         <p>No students registered yet.</p>
@@ -33,16 +33,17 @@ function RegisteredStudents() {
           <tbody>
             {registrations.map((registration) => registration && registration.student ? (
               <tr key={registration.id}>
-                <td>{registration.id}</td>
-                <td>{registration.student.name}</td>
-                <td>{registration.student.email}</td>
-                <td>{registration.courseName}</td>
-                <td>{registration.typeName}</td>
-                <td>
+                <td data-label="Student ID">{registration.id}</td>
+                <td data-label="Name">{registration.student.name}</td>
+                <td data-label="Email">{registration.student.email}</td>
+                <td data-label="Course">{registration.courseName}</td>
+                <td data-label="Type">{registration.typeName}</td>
+                <td data-label="Status">
                   <span className={`status-badge ${registration.status.toLowerCase()}`}>
                     {registration.status}
                   </span>
                 </td>
+
               </tr>
             ) : null)}
           </tbody>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/Addcourse.css'; 
-function AddCourse() {
+import '../CSS/Course.css'; 
+function Course() {
   const [courseName, setCourseName] = useState('');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -109,7 +109,7 @@ function AddCourse() {
 
   return (
     <div className="add-course-container">
-      <h2>Course Management</h2>
+   
       
       <div className="course-form-section">
         <h3>{editingId ? 'Edit Course' : 'Add New Course'}</h3>
@@ -205,4 +205,4 @@ function AddCourse() {
   );
 }
 
-export default AddCourse;
+export default Course;

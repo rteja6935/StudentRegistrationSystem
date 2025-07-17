@@ -13,17 +13,15 @@ html, body {
   color: #333;
 }
 
-/* Container */
-.offering-container {
+/* Main container */
+.course-types-container {
   min-height: 100vh;
   width: 100vw;
-  padding: 6rem 3vw 2rem;
+  padding: 6rem 3vw 2rem; /* Leave space for navbar */
   display: flex;
   flex-direction: column;
   gap: 2rem;
   background-color: #f4f6f8;
-    
-    margin-top: 510px;
 }
 
 /* Headings */
@@ -42,7 +40,7 @@ h3 {
 }
 
 /* Form Section */
-.offering-form-section {
+.type-form-section {
   background: #ffffff;
   padding: 2rem;
   border-radius: 8px;
@@ -50,6 +48,7 @@ h3 {
   width: 100%;
 }
 
+/* Inputs */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -61,13 +60,17 @@ h3 {
 }
 
 input,
-select {
+textarea {
   width: 100%;
   padding: 0.8rem;
   border-radius: 6px;
   border: 1px solid #cbd5e1;
   background-color: #f8fafc;
   font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .error-input {
@@ -123,7 +126,7 @@ select {
 }
 
 /* Table Section */
-.offering-list-section {
+.type-list-section {
   background: #ffffff;
   padding: 2rem;
   border-radius: 8px;
@@ -132,20 +135,24 @@ select {
   overflow-x: auto;
 }
 
-.offering-table {
+.course-table-wrapper {
+  overflow-x: auto;
+}
+
+.type-table {
   width: 100%;
   border-collapse: collapse;
   min-width: 800px;
 }
 
-.offering-table th,
-.offering-table td {
+.type-table th,
+.type-table td {
   padding: 1rem;
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
 }
 
-.offering-table th {
+.type-table th {
   background-color: #f1f5f9;
   font-weight: 600;
   color: #334155;
@@ -207,7 +214,7 @@ select {
 }
 
 /* Empty state */
-.no-offerings {
+.no-types {
   font-style: italic;
   color: #64748b;
   margin-top: 1rem;
@@ -240,7 +247,7 @@ select {
     font-size: 1.1rem;
   }
 
-  .offering-table {
+  .type-table {
     font-size: 0.85rem;
   }
 }

@@ -118,8 +118,15 @@ button:hover {
   background-color: #c82333;
 }
 
+.course-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .course-table {
   width: 100%;
+  min-width: 600px; /* Ensures table is wide enough to trigger scrolling */
   border-collapse: collapse;
   background-color: white;
   border-radius: var(--border-radius);
@@ -160,31 +167,36 @@ button:hover {
 
 /* Mobile Responsive */
 @media (max-width: 600px) {
-  .course-table,
-  .course-table thead,
-  .course-table tbody,
+  .course-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  .course-table {
+    min-width: 600px; /* Maintains minimum width for scrolling */
+    font-size: 14px;
+  }
+
   .course-table th,
-  .course-table td,
-  .course-table tr {
-    display: block;
-    width: 100%;
-  }
-
-  .course-table tbody tr {
-    margin-bottom: 1rem;
-    background-color: #f2f2f2;
-    padding: 1rem;
-    border-radius: var(--border-radius);
-  }
-
   .course-table td {
-    display: flex;
-    justify-content: space-between;
-    border: none;
-    margin-bottom: 5px;
+    padding: 10px 12px;
   }
 
-  .course-table th {
-    display: none;
+  /* Ensure table headers remain visible */
+  .course-table thead {
+    display: table-header-group;
+  }
+
+  .course-table tbody {
+    display: table-row-group;
+  }
+
+  .course-table tr {
+    display: table-row;
+  }
+
+  .course-table th,
+  .course-table td {
+    display: table-cell;
   }
 }

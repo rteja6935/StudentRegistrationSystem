@@ -141,7 +141,7 @@ function CourseOffering() {
 
   return (
     <div className="offering-container">
-      <h2>Course Offering Management</h2>
+    
       
       <div className="offering-form-section">
         <h3>{editingId ? 'Edit Offering' : 'Create New Offering'}</h3>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/Addcoursetype.css';
-
-function AddCourseTypes() {
+import '../CSS/CourseTypes.css'; 
+function CourseTypes() {
   const [typeName, setTypeName] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
@@ -219,4 +218,4 @@ function AddCourseTypes() {
   );
 }
 
-export default AddCourseTypes;
+export default CourseTypes;
