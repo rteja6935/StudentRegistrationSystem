@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 function StudentCourseRegistration() {
+   const navigate = useNavigate();
   const [studentData, setStudentData] = useState({
     name: '',
     email: '',
@@ -107,6 +108,21 @@ function StudentCourseRegistration() {
           </div>
         )}
         <p>A confirmation has been sent to {studentData.email}.</p>
+         <button
+          className="back-btn"
+          onClick={() => navigate('/student-dashboard')} // Adjust path if needed
+          style={{
+            marginTop: '20px',
+            padding: '10px 16px',
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+          }}
+        >
+          Back to Courses
+        </button>
       </div>
     );
   }
