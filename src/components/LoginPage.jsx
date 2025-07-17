@@ -144,7 +144,7 @@ const LoginPage = () => {
     if (role === 'admin') {
       navigate('/admin-dashboard');
     } else if (role === 'student') {
-      alert('Student login not implemented yet.');
+      navigate('/student-dashboard');
     }
   };
 

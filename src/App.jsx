@@ -7,6 +7,7 @@ import Course from './components/Course';
 import AdminLayout from './components/AdminLayout';
 import CourseOffering from './components/CourseOffering';
 import RegisteredStudents from './components/RegisteredStudents';
+import ShowAllCourse from './components/ShowAllCourse';
 function App() {
   return (
     <Routes>
@@ -54,6 +55,7 @@ function App() {
           </AdminLayout>
         }
       />
+      <Route path="/student-dashboard" element={<ShowAllCourse />} />
     </Routes>
   );
 }

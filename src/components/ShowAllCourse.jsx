@@ -26,6 +26,12 @@ function ShowAllCourse() {
   });
 
   return (
+    <>
+    <div className="navbar">
+  <div className="navbar-title">Student Dashboard</div>
+  <button className="logout-btn" onClick={() => navigate('/')}>Logout</button>
+</div>
+
     <div className="registration-container">
       <div className="filter-dropdown">
         <label htmlFor="filter">Filter Courses:</label>
@@ -74,6 +80,7 @@ function ShowAllCourse() {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
 
